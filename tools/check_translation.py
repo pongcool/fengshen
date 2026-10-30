@@ -27,12 +27,34 @@ FOOTNOTE_DEF = re.compile(r"^\[\^([^\]]+)\]:", re.M)
 # บรรทัดต้นฉบับที่ไม่ใช่เนื้อเรื่อง ดู docs/SOURCE_ISSUES.md S009
 IGNORED_SOURCE_LINES = {100: {"p/", "***"}}
 
-# (คำจีน, คำไทย) นับในต้นฉบับและคำแปล ถ้าคำแปลมีน้อยกว่าให้เตือน
+# (คำจีน, รูปไทยที่รองรับ) นับสูตรเดี่ยวหรือสูตรรวมตาม D021 ถ้าคำแปลมีน้อยกว่าให้เตือน
 FORMULAS = [
-    ("詩曰", "มีบทกวีกล่าวไว้ว่า"),
-    ("有詩為證", "มีบทกวีเป็นพยาน"),  # รับทั้ง “…เป็นพยานว่า” และ “…เป็นพยาน ดังที่…” (R007 บท 001)
-    ("下回分解", "โปรดติดตามในบทหน้า"),
+    ("詩曰", ("มีบทกวีกล่าวไว้ว่า", "มีบทกวีกล่าวเป็นพยานไว้ว่า", "บทกวีนั้นว่า")),
+    ("有詩為證", ("มีบทกวีเป็นพยาน", "มีบทกวีกล่าวเป็นพยาน")),
+    ("下回分解", ("โปรดติดตามในบทหน้า",)),
 ]
+
+
+
+def quote_warnings(body):
+    """เปิดซ้ำต้นย่อหน้าได้เมื่อผู้พูดเดิมกล่าวต่อ แต่ต้องปิดเมื่อจบคำพูด"""
+    opened = False
+    warnings = []
+    for match in re.finditer("[“”]", body):
+        if match.group() == "“":
+            if opened:
+                paragraph_start = body.rfind("\n\n", 0, match.start())
+                prefix = body[paragraph_start + 2 if paragraph_start >= 0 else 0:match.start()]
+                if prefix.strip(" >\t\r\n"):
+                    warnings.append("พบเครื่องหมาย “ ซ้อนในคำพูดที่ยังไม่ปิด")
+            opened = True
+        elif not opened:
+            warnings.append("พบเครื่องหมาย ” โดยไม่มีเครื่องหมายเปิด")
+        else:
+            opened = False
+    if opened:
+        warnings.append("คำพูดท้ายเนื้อเรื่องยังไม่มีเครื่องหมาย ” ปิด")
+    return warnings
 
 
 def source_paragraphs(num):
@@ -135,12 +157,15 @@ def check(num, forbidden):
 
     # คำเตือนอื่น
     body = "\n".join(l for _, l in body_lines)
-    if body.count("“") != body.count("”"):
-        warnings.append(f"เครื่องหมาย “ ({body.count('“')}) กับ ” ({body.count('”')}) ไม่เท่ากัน")
+    warnings.extend(quote_warnings(body))
     source = "\n".join(paras)
-    for zh, th in FORMULAS:
-        if source.count(zh) > body.count(th):
-            warnings.append(f"ต้นฉบับมี {zh} {source.count(zh)} ครั้ง แต่คำแปลมี '{th}' {body.count(th)} ครั้ง")
+    for zh, forms in FORMULAS:
+        translated_count = sum(body.count(form) for form in forms)
+        if source.count(zh) > translated_count:
+            warnings.append(
+                f"ต้นฉบับมี {zh} {source.count(zh)} ครั้ง แต่คำแปลมีสูตรที่รองรับ "
+                f"{translated_count} ครั้ง ({' / '.join(forms)})"
+            )
 
     return errors, warnings
 
