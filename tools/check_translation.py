@@ -27,6 +27,9 @@ FOOTNOTE_DEF = re.compile(r"^\[\^([^\]]+)\]:", re.M)
 # บรรทัดต้นฉบับที่ไม่ใช่เนื้อเรื่อง ดู docs/SOURCE_ISSUES.md S009
 IGNORED_SOURCE_LINES = {100: {"p/", "***"}}
 
+# คำที่บอกว่าเชิงอรรถกำลังเล่าขั้นตอนหรือข้อสงสัยของผู้แปล (D025)
+TRANSLATOR_NOTE_PHRASES = ["ฉบับแปล", "คำแปลชั่วคราว", "ผู้แปล", "ยังไม่อาจยืนยัน", "ไม่มีหลักฐาน", "โดยคาดเดา"]
+
 # (คำจีน, รูปไทยที่รองรับ) นับสูตรเดี่ยวหรือสูตรรวมตาม D021 ถ้าคำแปลมีน้อยกว่าให้เตือน
 FORMULAS = [
     ("詩曰", ("มีบทกวีกล่าวไว้ว่า", "มีบทกวีกล่าวเป็นพยานไว้ว่า", "บทกวีนั้นว่า")),
@@ -146,6 +149,15 @@ def check(num, forbidden):
         errors.append(f"เชิงอรรถ [^{label}] ไม่มีคำอธิบายท้ายบท")
     for label in sorted(set(defs) - set(refs)):
         errors.append(f"คำอธิบาย [^{label}] ไม่มีจุดอ้างในเนื้อเรื่อง")
+    # เชิงอรรถเป็นของผู้อ่าน (D025)
+    for lineno, line in enumerate(lines[1:], 2):
+        if not FOOTNOTE_DEF.match(line):
+            continue
+        if CJK.search(line):
+            errors.append(f"บรรทัด {lineno}: มีอักษรจีนในเชิงอรรถ: {CJK.findall(line)[:5]}")
+        for phrase in TRANSLATOR_NOTE_PHRASES:
+            if phrase in line:
+                warnings.append(f"บรรทัด {lineno}: เชิงอรรถมีคำว่า '{phrase}' อาจเป็นบันทึกผู้แปล ให้ย้ายไป reviews/")
     order = []
     for label in refs:
         if label not in order:
