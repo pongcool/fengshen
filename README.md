@@ -13,7 +13,7 @@
 - `TRANSLATION_GUIDE.md` — แนวทางแปล
 - `DECISIONS.md` — ข้อยุติและประเด็นเปิด
 - `GLOSSARY.md`, `CHARACTERS.md`, `WORLD.md` — ศัพท์กลาง ตัวละคร และโลกของเรื่อง
-- `docs/STYLE_SAMPLE.md` — ตัวอย่างสำนวนเบื้องต้น ไม่ใช่บทแปลที่ผ่านการรับรอง
+- `docs/STYLE_SAMPLE.md` — ตัวอย่างสำนวนของบทนำร่อง (เอกสารประวัติ) ไม่ใช่บทแปลที่ผ่านการรับรอง
 - `docs/TRANSLITERATION.md` — ตารางถอดเสียงจีนกลางเป็นไทย
 - `docs/ADDRESS_TERMS.md` — กติกาและค่าเริ่มต้นของสรรพนามและคำเรียก
 - `docs/ADDRESS_TERMS_CASES.md` — คำเรียกที่ยืนยันรายบท 001–035 (ค้นด้วย `tools/address_lookup.py`)
@@ -22,6 +22,7 @@
 - `tools/check_translation.py` — ตรวจหัวบท ป้ายย่อหน้า อักษรจีนหลง เชิงอรรถ และรูปที่ศัพท์กลางห้ามใช้
 - `tools/check_terms.py` — ตรวจว่าคำแปลใช้รูปไทยตามศัพท์กลางเมื่อต้นฉบับมีคำนั้น
 - `tools/address_lookup.py` — ดึงแถวคำเรียกที่ยืนยันรายบทซึ่งเกี่ยวกับบทที่กำลังแปล
+- `tools/chapter_lookup.py` — ดึงแถว GLOSSARY, CHARACTERS, WORLD, SOURCE_ISSUES และบันทึกคำเรียกที่เกี่ยวกับบทในครั้งเดียว แบบดัชนี (D046)
 - `tools/term_stats.py` — นับคำจีนในต้นฉบับ ใช้ก่อนลงทะเบียนศัพท์ใหม่
 - `tools/find_variants.py` — หาชื่อในต้นฉบับที่ต่างจากศัพท์กลางหนึ่งตัวอักษร
 - `AGENTS.md` — ข้อกำหนดสำหรับ AI ที่ทำงานในโปรเจกต์นี้
