@@ -276,8 +276,8 @@ def build_epub(sections, out):
         spine.append('<itemref idref="title"/>')
         for slug, title, body in sections:
             z.writestr(f"OEBPS/{slug}.xhtml", xhtml(title, body, "style.css"), compress_type=zipfile.ZIP_DEFLATED)
-            manifest.append(f'<item id="{slug}" href="{slug}.xhtml" media-type="application/xhtml+xml"/>')
-            spine.append(f'<itemref idref="{slug}"/>')
+            manifest.append(f'<item id="s-{slug}" href="{slug}.xhtml" media-type="application/xhtml+xml"/>')
+            spine.append(f'<itemref idref="s-{slug}"/>')
         nav = "".join(f'<li><a href="{s}.xhtml">{esc(t)}</a></li>' for s, t, _ in sections)
         z.writestr("OEBPS/nav.xhtml",
                    xhtml("สารบัญ", f'<nav epub:type="toc" id="toc"><h1>สารบัญ</h1><ol>{nav}</ol></nav>', "style.css"),
