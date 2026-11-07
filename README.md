@@ -24,6 +24,7 @@
 - `tools/address_lookup.py` — ดึงแถวคำเรียกที่ยืนยันรายบทซึ่งเกี่ยวกับบทที่กำลังแปล
 - `tools/chapter_lookup.py` — ดึงแถว GLOSSARY, CHARACTERS, WORLD, SOURCE_ISSUES และบันทึกคำเรียกที่เกี่ยวกับบทในครั้งเดียว แบบดัชนี (D046)
 - `tools/term_stats.py` — นับคำจีนในต้นฉบับ ใช้ก่อนลงทะเบียนศัพท์ใหม่
+- `tools/build_book.py` — รวมเล่มเป็น build/fengshen.html และ build/fengshen.epub (ส่วนหน้าอยู่ใน book/)
 - `tools/check_book.py` — ตรวจความสม่ำเสมอทั้งเล่ม: ชื่อตามศัพท์กลาง รูปแปรวรรณยุกต์ และจำนวนสูตรเกริ่นกวี
 - `tools/find_variants.py` — หาชื่อในต้นฉบับที่ต่างจากศัพท์กลางหนึ่งตัวอักษร
 - `AGENTS.md` — ข้อกำหนดสำหรับ AI ที่ทำงานในโปรเจกต์นี้
