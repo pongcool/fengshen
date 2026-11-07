@@ -20,8 +20,13 @@ from term_stats import ROOT
 TITLE = "เฟิงเสินเหยี่ยนอี้"
 SUBTITLE = "封神演義 ฉบับแปลภาษาไทย"
 CREATOR = "แปลโดย Claude (Anthropic) ตรวจโดย Codex (OpenAI)"
+RIGHTS = "คำแปลอนุญาตภายใต้ CC BY-NC 4.0 (ห้ามใช้เพื่อการค้า) ต้นฉบับจีนเป็นสาธารณสมบัติ"
 BOOK_ID = "urn:uuid:" + str(uuid.uuid5(uuid.NAMESPACE_URL, "hongsin-fengshen-yanyi-th"))
 ITEM_TYPES = {"ของวิเศษ", "ค่ายกล", "วิชา", "อาวุธ", "พาหนะ"}
+# แถว CHARACTERS ที่จีน/ไทยหลายรูปเป็นชื่อเรียกของคนเดียว (ตรวจจากช่องข้อมูลเมื่อ 2026-11-07, RBUILD-C3)
+ALIAS_ROWS = {"C078", "C081", "C159", "C160", "C164", "C167", "C170", "C236", "C277"}
+# 月合老人 กับ 月合仙翁 เป็นคนเดียวกัน ส่วน 符元仙翁 เป็นอีกองค์
+SPECIAL_ROWS = {"C221": [("月合仙翁", "เยว่เหอเซียนเวิง"), ("符元仙翁", "ฝูหยวนเซียนเวิง")]}
 
 CSS = """
 body { font-family: "Sarabun", "Noto Serif Thai", "Noto Sans Thai", "Tahoma", serif; line-height: 1.8; margin: 0 auto; max-width: 42em; padding: 0 1em; }
@@ -41,6 +46,9 @@ nav ol { list-style: none; padding-left: 0; }
 """
 
 
+REFCOUNT = {}
+
+
 def esc(s):
     return html.escape(s, quote=False)
 
@@ -54,7 +62,8 @@ def inline(text, fnmap):
         if key not in fnmap:
             raise ValueError(f"เชิงอรรถไม่มีคำอธิบาย: {key}")
         n, anchor = fnmap[key]
-        return f'<sup><a id="r-{anchor}" href="#f-{anchor}">{n}</a></sup>'
+        REFCOUNT[anchor] = REFCOUNT.get(anchor, 0) + 1
+        return f'<sup><a id="r-{anchor}-{REFCOUNT[anchor]}" href="#f-{anchor}">{n}</a></sup>'
 
     return re.sub(r"\[\^([^\]]+)\]", ref, out)
 
@@ -122,7 +131,8 @@ def convert(md, slug):
             n, anchor = fnmap[k]
             if k not in defs:
                 raise ValueError(f"{slug}: ไม่มีคำอธิบายเชิงอรรถ {k}")
-            notes.append(f'<li id="f-{anchor}">{inline(defs[k], fnmap)} <a href="#r-{anchor}">↩</a></li>')
+            backs = " ".join(f'<a href="#r-{anchor}-{j}">↩</a>' for j in range(1, REFCOUNT.get(anchor, 1) + 1))
+            notes.append(f'<li id="f-{anchor}">{inline(defs[k], fnmap)} {backs}</li>')
         parts.append('<section class="footnotes"><ol>' + "".join(notes) + "</ol></section>")
     return title, "\n".join(parts)
 
@@ -133,50 +143,80 @@ def table_rows(path):
             yield [c.strip() for c in line.strip().strip("|").split("|")]
 
 
-def first_chapter(name, th):
-    for n in sorted(th):
-        if name in th[n]:
+def ref_chapters(cell):
+    return sorted({int(x) for x in re.findall(r"(?<!\d)(\d{3})(?!\d)", cell) if 1 <= int(x) <= 100})
+
+
+def first_chapter(zh, name, src, th, refs=()):
+    """บทแรกที่ต้นฉบับมีคำจีนนี้และคำแปลบทเดียวกันมีรูปไทยนี้ (RBUILD-C1)
+    ถ้าไม่พบ ใช้บทแรกในช่องอ้างอิงของเอกสารกลาง"""
+    for n in sorted(src):
+        if zh in src[n] and n in th and name in th[n]:
             return int(n)
-    return None
+    return refs[0] if refs else None
 
 
-def clean(cell):
-    return re.sub(r"\s*\(.*?\)", "", cell).split(" / ")[0].split("/")[0].strip()
+def split_cell(cell):
+    return [x.strip() for x in re.sub(r"\s*\(.*?\)", "", cell).split("/") if x.strip()]
 
 
-def appendix_characters(th):
-    rows = []
+def appendix_characters(src, th):
+    rows = set()
     for c in table_rows("CHARACTERS.md"):
         if not re.fullmatch(r"C\d+", c[0]):
             continue
-        name, zh = clean(c[2]), clean(c[1])
-        if not name or not zh:
+        zh_forms, th_forms = split_cell(c[1]), split_cell(c[2])
+        refs = ref_chapters(c[-1])
+        if not zh_forms or not th_forms:
             continue
-        ch = first_chapter(name, th)
-        if ch:
-            rows.append((ch, name, zh))
-    rows.sort()
-    out = ["# รายชื่อตัวละคร", "", "เรียงตามบทที่ชื่อไทยปรากฏครั้งแรกในคำแปล ชื่อเดียวกันอาจมีฉายาหรือคำเรียกอื่นในเนื้อเรื่อง", ""]
+        # แถวที่รวมหลายบุคคล: จำนวนรูปไทยเท่ารูปจีนและมากกว่าหนึ่ง (RBUILD-C3)
+        # ยกเว้นแถวที่เป็นชื่อเรียกหลายรูปของคนเดียว (ALIAS_ROWS) และแถวพิเศษใน SPECIAL_ROWS
+        if c[0] in SPECIAL_ROWS:
+            people = SPECIAL_ROWS[c[0]]
+        elif c[0] in ALIAS_ROWS or not (len(th_forms) > 1 and len(th_forms) == len(zh_forms)):
+            people = [(zh_forms[0], th_forms[0])]
+        else:
+            people = list(zip(zh_forms, th_forms))
+        for zh, name in people:
+            if len(people) > 1:
+                ch = first_chapter(zh, name, src, th)
+            else:
+                ch = refs[0] if refs else first_chapter(zh, name, src, th)
+            if ch:
+                rows.add((ch, name, zh))
+    rows = sorted(rows)
+    out = ["# รายชื่อตัวละคร", "", "เรียงตามบทที่ปรากฏครั้งแรก ชื่อเดียวกันอาจมีฉายาหรือคำเรียกอื่นในเนื้อเรื่อง ชื่อที่ซ้ำกันแต่บทแรกต่างกันเป็นคนละคน", ""]
     body = "".join(f"<tr><td>{esc(n)}</td><td>{esc(z)}</td><td>{ch}</td></tr>" for ch, n, z in rows)
     return out, f"<table><tr><th>ชื่อไทย</th><th>ชื่อจีน</th><th>บทแรก</th></tr>{body}</table>", len(rows)
 
 
-def appendix_items(th):
+def item_type(cell):
+    for t in ITEM_TYPES:
+        if cell.startswith(t):
+            return t
+    return None
+
+
+def appendix_items(src, th):
     rows, seen = [], set()
     for c in table_rows("GLOSSARY.md"):
-        if len(c) < 3 or c[2] not in ITEM_TYPES:
+        if len(c) < 3:
             continue
-        zh_forms = [z.strip() for z in re.sub(r"\(.*?\)", "", c[0]).split("/")]
-        th_forms = [t.strip() for t in re.sub(r"\(.*?\)", "", c[1]).split("/")]
+        kind = item_type(c[2])
+        if not kind:
+            continue
+        zh_forms, th_forms = split_cell(c[0]), split_cell(c[1])
         if len(zh_forms) != len(th_forms):
             zh_forms, th_forms = zh_forms[:1], th_forms[:1]
         for z, t in zip(zh_forms, th_forms):
-            if not z or not t or "…" in t or t in seen or not re.search(r"[㐀-鿿]", z):
+            if "…" in t or z in seen or not re.fullmatch(r"[㐀-鿿豈-﫿]{2,}", z):
                 continue
-            ch = first_chapter(t, th)
+            refs = ref_chapters(c[4]) if len(c) > 4 else []
+            # แถวรายการเดียวที่มีตำแหน่งอ้างอิง ใช้บทแรกตามเอกสารกลาง (เช่น 金箍 ของหม่าซุ่ย 082 ไม่ใช่ห่วงคาดหัวใน 074)
+            ch = refs[0] if refs and len(zh_forms) == 1 else first_chapter(z, t, src, th, refs)
             if ch:
-                seen.add(t)
-                rows.append((ch, t, z, c[2]))
+                seen.add(z)
+                rows.append((ch, t, z, kind))
     rows.sort()
     out = ["# ดัชนีของวิเศษ ค่ายกล และวิชา", "", "เรียงตามบทที่ปรากฏครั้งแรก คุณสมบัติของแต่ละรายการให้อ่านจากเนื้อเรื่องและเชิงอรรถ", ""]
     body = "".join(f"<tr><td>{esc(t)}</td><td>{esc(z)}</td><td>{esc(k)}</td><td>{ch}</td></tr>" for ch, t, z, k in rows)
@@ -185,6 +225,7 @@ def appendix_items(th):
 
 def collect():
     th = {p.stem: p.read_text(encoding="utf-8") for p in sorted((ROOT / "translations" / "th").glob("[0-9][0-9][0-9].md"))}
+    src = {p.name[:3]: p.read_text(encoding="utf-8") for p in (ROOT / "chapters").glob("[0-9][0-9][0-9]-*.md")}
     sections = []
     for p in sorted((ROOT / "book").glob("*.md")):
         title, body = convert(p.read_text(encoding="utf-8"), p.stem)
@@ -193,7 +234,7 @@ def collect():
         title, body = convert(text, f"ch{n}")
         sections.append((f"ch{n}", title, body))
     for slug, fn in (("zz-characters", appendix_characters), ("zz-items", appendix_items)):
-        head, table, count = fn(th)
+        head, table, count = fn(src, th)
         title, body = convert("\n".join(head), slug)
         sections.append((slug, title, body + table))
         print(f"{title}: {count} รายการ")
@@ -209,7 +250,7 @@ def xhtml(title, body, css_href):
 
 def build_html(sections, out):
     toc = "".join(f'<li><a href="#{s}">{esc(t)}</a></li>' for s, t, _ in sections)
-    parts = [f'<section class="title"><h1>{TITLE}</h1><p>{SUBTITLE}</p><p>{CREATOR}</p></section>',
+    parts = [f'<section class="title"><h1>{TITLE}</h1><p>{SUBTITLE}</p><p>{CREATOR}</p><p>{RIGHTS}</p></section>',
              f'<nav><h2>สารบัญ</h2><ol>{toc}</ol></nav>']
     for slug, _, body in sections:
         parts.append(f'<section id="{slug}">{body}</section>')
@@ -229,7 +270,7 @@ def build_epub(sections, out):
                    '<rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>',
                    compress_type=zipfile.ZIP_DEFLATED)
         z.writestr("OEBPS/style.css", CSS, compress_type=zipfile.ZIP_DEFLATED)
-        title_body = f'<section class="title"><h1>{TITLE}</h1><p>{SUBTITLE}</p><p>{CREATOR}</p></section>'
+        title_body = f'<section class="title"><h1>{TITLE}</h1><p>{SUBTITLE}</p><p>{CREATOR}</p><p>{RIGHTS}</p></section>'
         z.writestr("OEBPS/title.xhtml", xhtml(TITLE, title_body, "style.css"), compress_type=zipfile.ZIP_DEFLATED)
         manifest.append('<item id="title" href="title.xhtml" media-type="application/xhtml+xml"/>')
         spine.append('<itemref idref="title"/>')
@@ -247,7 +288,7 @@ def build_epub(sections, out):
                '<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid" xml:lang="th">'
                '<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">'
                f'<dc:identifier id="bookid">{BOOK_ID}</dc:identifier><dc:title>{TITLE}</dc:title>'
-               f'<dc:creator>{esc(CREATOR)}</dc:creator><dc:language>th</dc:language>'
+               f'<dc:creator>{esc(CREATOR)}</dc:creator><dc:language>th</dc:language><dc:rights>{esc(RIGHTS)}</dc:rights>'
                f'<meta property="dcterms:modified">{modified}</meta></metadata>'
                f'<manifest>{"".join(manifest)}</manifest><spine>{"".join(spine)}</spine></package>')
         z.writestr("OEBPS/content.opf", opf, compress_type=zipfile.ZIP_DEFLATED)
