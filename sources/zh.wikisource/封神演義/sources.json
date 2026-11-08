@@ -1,0 +1,1007 @@
+{
+  "source": "https://zh.wikisource.org/wiki/封神演義",
+  "index_revision_id": 2609001,
+  "downloaded_at": "2026-11-03T03:33:17.912430+00:00",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "第1回 紂王女媧宮進香",
+      "file": "001-第001回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7001",
+      "revision_id": 5966216,
+      "source_characters": 3671,
+      "source_missing_glyphs": 0,
+      "sha256": "0c64bfc2a76275205e253b88f033f026f36353c1ba06367399bf43ceb66d7efe"
+    },
+    {
+      "chapter": 2,
+      "title": "第2回 冀州侯蘇護反商",
+      "file": "002-第002回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7002",
+      "revision_id": 2346901,
+      "source_characters": 7930,
+      "source_missing_glyphs": 0,
+      "sha256": "396cbbe04a078dded4822e6455b8a10f10cd95ea2da2bd7915383bac93956814"
+    },
+    {
+      "chapter": 3,
+      "title": "第3回 姬昌解圍進妲己",
+      "file": "003-第003回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7003",
+      "revision_id": 7902571,
+      "source_characters": 6218,
+      "source_missing_glyphs": 0,
+      "sha256": "cdc2fb4550d866aadd8434310f2872aba473041c2ff4ffe8d23513b2da035c48"
+    },
+    {
+      "chapter": 4,
+      "title": "第4回 恩州驛狐狸死妲己",
+      "file": "004-第004回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7004",
+      "revision_id": 2491729,
+      "source_characters": 3727,
+      "source_missing_glyphs": 0,
+      "sha256": "237aa7968c600bc227dbbdf8bc3d37d5afe5bf22aa44b88c4ac31ce2669cd73e"
+    },
+    {
+      "chapter": 5,
+      "title": "第5回 雲中子進劍除妖",
+      "file": "005-第005回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7005",
+      "revision_id": 868469,
+      "source_characters": 3968,
+      "source_missing_glyphs": 0,
+      "sha256": "da5a25410f2a5681c6342bda22b010cb078db7d40364c92ae004e7e3f052bb6f"
+    },
+    {
+      "chapter": 6,
+      "title": "第6回 紂王無道造炮烙",
+      "file": "006-第006回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7006",
+      "revision_id": 1317968,
+      "source_characters": 5680,
+      "source_missing_glyphs": 0,
+      "sha256": "ffc3ee317e1589bb9423d7424628d3b1ec5f9df0ae3f458bb2a4ce7dbca92893"
+    },
+    {
+      "chapter": 7,
+      "title": "第7回 費仲計廢姜皇后",
+      "file": "007-第007回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7007",
+      "revision_id": 868472,
+      "source_characters": 6698,
+      "source_missing_glyphs": 0,
+      "sha256": "8f73e97c741a9d556598a2ba878ed14e908bd45da113332dc3f495d959ef942f"
+    },
+    {
+      "chapter": 8,
+      "title": "第8回 方弼方相反朝歌",
+      "file": "008-第008回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7008",
+      "revision_id": 868476,
+      "source_characters": 8535,
+      "source_missing_glyphs": 0,
+      "sha256": "50eb78c7b871dad7d194adf0d14733dcb028e5f0e74d234b206345f09442028a"
+    },
+    {
+      "chapter": 9,
+      "title": "第9回 商容九間殿死節",
+      "file": "009-第009回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7009",
+      "revision_id": 868508,
+      "source_characters": 5498,
+      "source_missing_glyphs": 0,
+      "sha256": "bdb627170e66d5f53f20e3e6134dc796622f4f0d6cd0928f5577dbe3d8e77334"
+    },
+    {
+      "chapter": 10,
+      "title": "第10回 姬伯燕山收雷震",
+      "file": "010-第010回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7010",
+      "revision_id": 868509,
+      "source_characters": 5395,
+      "source_missing_glyphs": 0,
+      "sha256": "5ca06bc4d1519c887e8029673ed360389724c5cb7ed775108a2b9641e39b7a09"
+    },
+    {
+      "chapter": 11,
+      "title": "第11回 羑里城囚西伯侯",
+      "file": "011-第011回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7011",
+      "revision_id": 1740147,
+      "source_characters": 6767,
+      "source_missing_glyphs": 0,
+      "sha256": "efb7bb5f5a34c6ec6be55a24d2ae982d6ea14aa61987e08c7e76bfc7e65a1fc8"
+    },
+    {
+      "chapter": 12,
+      "title": "第12回 陳塘關哪吒出世",
+      "file": "012-第012回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7012",
+      "revision_id": 868511,
+      "source_characters": 5933,
+      "source_missing_glyphs": 0,
+      "sha256": "8de8bfe97a804f3f519d5a98433edc3b1bc0ad75cc2d79419d360fb60bf96c40"
+    },
+    {
+      "chapter": 13,
+      "title": "第13回 太乙真人收石磯",
+      "file": "013-第013回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7013",
+      "revision_id": 868528,
+      "source_characters": 5616,
+      "source_missing_glyphs": 0,
+      "sha256": "14611e5b11379e67dcd87407e7d3d81e814f560a866ccfcc199ec7fc6a9d3061"
+    },
+    {
+      "chapter": 14,
+      "title": "第14回 哪吒現蓮花化身",
+      "file": "014-第014回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7014",
+      "revision_id": 877490,
+      "source_characters": 6390,
+      "source_missing_glyphs": 0,
+      "sha256": "b969231144192c66d9087f9913a04c44c0e9a9126c0e7aff9bdae58c014015d6"
+    },
+    {
+      "chapter": 15,
+      "title": "第15回 崑崙山子牙下山",
+      "file": "015-第015回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7015",
+      "revision_id": 1749914,
+      "source_characters": 4551,
+      "source_missing_glyphs": 0,
+      "sha256": "d2e20800c21db21d5636cd6180c54a4203affd7d9ebe2c7a58686b0df89a484c"
+    },
+    {
+      "chapter": 16,
+      "title": "第16回 子牙火燒琵琶精",
+      "file": "016-第016回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7016",
+      "revision_id": 1740163,
+      "source_characters": 5495,
+      "source_missing_glyphs": 0,
+      "sha256": "c11bf54e63fbdb6c54e7c354883714b61d6ac190ea837fb083c73791c2dd622e"
+    },
+    {
+      "chapter": 17,
+      "title": "第17回 蘇妲己置造蠆盆",
+      "file": "017-第017回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7017",
+      "revision_id": 1740175,
+      "source_characters": 4475,
+      "source_missing_glyphs": 0,
+      "sha256": "afcc39677f0266051408e7bf1d9b3c4d7d14d273167be5aba5f9b6ab2f05d759"
+    },
+    {
+      "chapter": 18,
+      "title": "第18回 子牙諫主隱磻溪",
+      "file": "018-第018回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7018",
+      "revision_id": 1740181,
+      "source_characters": 5822,
+      "source_missing_glyphs": 0,
+      "sha256": "dbd3bd85a83fc6a2107144cbaa6213de931abd90bae034f848cf77898c7b7da5"
+    },
+    {
+      "chapter": 19,
+      "title": "第19回 伯邑考進貢贖罪",
+      "file": "019-第019回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7019",
+      "revision_id": 868441,
+      "source_characters": 6078,
+      "source_missing_glyphs": 0,
+      "sha256": "4977ce3de3357a652c9b4ab156409b5913c10611dda378eae37f1010d00969c9"
+    },
+    {
+      "chapter": 20,
+      "title": "第20回 散宜生私通費尤",
+      "file": "020-第020回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7020",
+      "revision_id": 868443,
+      "source_characters": 6290,
+      "source_missing_glyphs": 1,
+      "sha256": "147740aee2f0b62636cb33fc9c259e69b6f6c7c9f238fe53f99bd57ce583ce35"
+    },
+    {
+      "chapter": 21,
+      "title": "第21回 文王誇官逃五關",
+      "file": "021-第021回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7021",
+      "revision_id": 1962195,
+      "source_characters": 3600,
+      "source_missing_glyphs": 0,
+      "sha256": "07a93d66328afda1a8b059d65ce1f780d51eb41322782dd6cff778966cd8cd7c"
+    },
+    {
+      "chapter": 22,
+      "title": "第22回 西伯侯文王吐子",
+      "file": "022-第022回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7022",
+      "revision_id": 976825,
+      "source_characters": 5122,
+      "source_missing_glyphs": 0,
+      "sha256": "0e61681333c7cf6d4ef4515dfa50ef12da8c9c0ec67b05d43180554b42dc66d8"
+    },
+    {
+      "chapter": 23,
+      "title": "第23回 文王夜夢飛熊兆",
+      "file": "023-第023回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7023",
+      "revision_id": 868535,
+      "source_characters": 4756,
+      "source_missing_glyphs": 0,
+      "sha256": "4456d77ea3553bd7e7a4ee2bf5ab90514ea138d93c78f16dcd33f653f8e7d16d"
+    },
+    {
+      "chapter": 24,
+      "title": "第24回 渭水文王聘子牙",
+      "file": "024-第024回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7024",
+      "revision_id": 868536,
+      "source_characters": 6970,
+      "source_missing_glyphs": 0,
+      "sha256": "5ace68404fb899d30366ddf693b71f7ce5c66e72aa298e916767f16efc01cd5a"
+    },
+    {
+      "chapter": 25,
+      "title": "第25回 蘇妲己請妖赴宴",
+      "file": "025-第025回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7025",
+      "revision_id": 869413,
+      "source_characters": 4296,
+      "source_missing_glyphs": 0,
+      "sha256": "ec12dfc139fac486aa3abf3b8d5f651092b2b60032457964e65d2b8cca2e9d3a"
+    },
+    {
+      "chapter": 26,
+      "title": "第26回 妲己設計害比干",
+      "file": "026-第026回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7026",
+      "revision_id": 868538,
+      "source_characters": 5813,
+      "source_missing_glyphs": 0,
+      "sha256": "cd9070bc3e964b771d3a79a264354f9caff7c4f5434b311d16e29ba24aa635b1"
+    },
+    {
+      "chapter": 27,
+      "title": "第27回 太師回兵陳十策",
+      "file": "027-第027回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7027",
+      "revision_id": 868539,
+      "source_characters": 5775,
+      "source_missing_glyphs": 0,
+      "sha256": "95253fd8abc2a8f9ad4028b6984e9ed7e0d2d949e2e1726c976c56ccaaf87d32"
+    },
+    {
+      "chapter": 28,
+      "title": "第28回 子牙兵伐崇侯虎",
+      "file": "028-第028回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7028",
+      "revision_id": 869520,
+      "source_characters": 4920,
+      "source_missing_glyphs": 0,
+      "sha256": "153798e1a563a4b72f361c4435030a49e5a977af3d4de6906b31d232bae87ba3"
+    },
+    {
+      "chapter": 29,
+      "title": "第29回 斬侯虎文王托孤",
+      "file": "029-第029回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7029",
+      "revision_id": 1564230,
+      "source_characters": 5052,
+      "source_missing_glyphs": 0,
+      "sha256": "88c096b359b587b065ccb721ea9ba389a53ede59f268b8a96a7a39368250a7c8"
+    },
+    {
+      "chapter": 30,
+      "title": "第30回 周紀激反武成王",
+      "file": "030-第030回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7030",
+      "revision_id": 868542,
+      "source_characters": 5919,
+      "source_missing_glyphs": 0,
+      "sha256": "97657e877e3681170c100a0f84c6fd00b15900a82ff06de7a484d953b7843837"
+    },
+    {
+      "chapter": 31,
+      "title": "第31回 聞太師驅兵追襲",
+      "file": "031-第031回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7031",
+      "revision_id": 868543,
+      "source_characters": 4644,
+      "source_missing_glyphs": 0,
+      "sha256": "35136b7521f00b8a61846c671510e424fa732786c8e14bc51ccc84f9b2d01b8b"
+    },
+    {
+      "chapter": 32,
+      "title": "第32回 黃天化潼關會父",
+      "file": "032-第032回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7032",
+      "revision_id": 868544,
+      "source_characters": 4119,
+      "source_missing_glyphs": 0,
+      "sha256": "644cc2fce89808f67ab899c522b0df83a8ccefc982b9b73e66f899d61c1625ed"
+    },
+    {
+      "chapter": 33,
+      "title": "第33回 黃飛虎泗水大戰",
+      "file": "033-第033回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7033",
+      "revision_id": 1214917,
+      "source_characters": 5536,
+      "source_missing_glyphs": 0,
+      "sha256": "6ef4e33dadf9d2bd8e445f47615c022760af6534d6f6852aeb9261a0f10b6980"
+    },
+    {
+      "chapter": 34,
+      "title": "第34回 飛虎歸周見子牙",
+      "file": "034-第034回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7034",
+      "revision_id": 868546,
+      "source_characters": 5414,
+      "source_missing_glyphs": 0,
+      "sha256": "83e662f84c4c96e800d444e65874513411701b4b926f5dd722825f8acc55222e"
+    },
+    {
+      "chapter": 35,
+      "title": "第35回 晁田兵探西岐事",
+      "file": "035-第035回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7035",
+      "revision_id": 868547,
+      "source_characters": 4758,
+      "source_missing_glyphs": 0,
+      "sha256": "8ebed7224efb31dd8c43415e5f1de10b79a1c318663fff73f6d6c0293a263ad2"
+    },
+    {
+      "chapter": 36,
+      "title": "第36回 張桂芳奉詔西征",
+      "file": "036-第036回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7036",
+      "revision_id": 868548,
+      "source_characters": 5287,
+      "source_missing_glyphs": 0,
+      "sha256": "11dd9062b3f304c04115b32e848b30ab195d3074c0d53b9a5a7732e8cc0175dc"
+    },
+    {
+      "chapter": 37,
+      "title": "第37回 姜子牙一上崑崙",
+      "file": "037-第037回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7037",
+      "revision_id": 868549,
+      "source_characters": 5098,
+      "source_missing_glyphs": 0,
+      "sha256": "2cc784c0ca6297910c60fef58d6bcb30db909c9a799910babcef8c1208f1adb2"
+    },
+    {
+      "chapter": 38,
+      "title": "第38回 四聖西岐會子牙",
+      "file": "038-第038回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7038",
+      "revision_id": 870624,
+      "source_characters": 6156,
+      "source_missing_glyphs": 0,
+      "sha256": "7f0e6d67c72dc16c39d848cc6e1b586efff93c4eb37228d32f0f3a9574a933c4"
+    },
+    {
+      "chapter": 39,
+      "title": "第39回 姜子牙冰凍岐山",
+      "file": "039-第039回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7039",
+      "revision_id": 1159779,
+      "source_characters": 5669,
+      "source_missing_glyphs": 0,
+      "sha256": "30fb256a27eb277fc0c7cca4f6ac672dd525ad4c06c68241b583ab825a6af77e"
+    },
+    {
+      "chapter": 40,
+      "title": "第40回 四天王遇丙靈公",
+      "file": "040-第040回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7040",
+      "revision_id": 868552,
+      "source_characters": 8228,
+      "source_missing_glyphs": 0,
+      "sha256": "092b441d936b05dfb60265032639da48f61eebe59a57be99633bf5db264ad8c5"
+    },
+    {
+      "chapter": 41,
+      "title": "第41回 聞太師兵伐西岐",
+      "file": "041-第041回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7041",
+      "revision_id": 868553,
+      "source_characters": 5553,
+      "source_missing_glyphs": 0,
+      "sha256": "f232298e6d981ccab17cc4ec81aafb03be90ff0fe94d1c417d6834738fd8e419"
+    },
+    {
+      "chapter": 42,
+      "title": "第42回 黃花山收鄧辛張陶",
+      "file": "042-第042回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7042",
+      "revision_id": 7912158,
+      "source_characters": 5473,
+      "source_missing_glyphs": 0,
+      "sha256": "f51a60b5b13aa5050c6eec3beaa0a81cb5faa6539f91a0e1cf19c7d592660e0a"
+    },
+    {
+      "chapter": 43,
+      "title": "第43回 聞大師西岐大戰",
+      "file": "043-第043回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7043",
+      "revision_id": 2027693,
+      "source_characters": 5396,
+      "source_missing_glyphs": 0,
+      "sha256": "77b483b86a687500238ee2f532add2d9f51018e5d77835e4c94a7174303a2a22"
+    },
+    {
+      "chapter": 44,
+      "title": "第44回 子牙魂游崑崙山",
+      "file": "044-第044回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7044",
+      "revision_id": 868556,
+      "source_characters": 7161,
+      "source_missing_glyphs": 0,
+      "sha256": "c584b71e501897710c67c2cddfaa1c52d1f2c3a70bf7c1264ddf0fa196b6588b"
+    },
+    {
+      "chapter": 45,
+      "title": "第45回 燃燈議破十絕陣",
+      "file": "045-第045回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7045",
+      "revision_id": 868557,
+      "source_characters": 6290,
+      "source_missing_glyphs": 0,
+      "sha256": "e4113c551032a0ca4f07965a1fc35c743bad9f2d1943a57410229913b9d0ba44"
+    },
+    {
+      "chapter": 46,
+      "title": "第46回 廣成子破金光陣",
+      "file": "046-第046回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7046",
+      "revision_id": 868558,
+      "source_characters": 5696,
+      "source_missing_glyphs": 0,
+      "sha256": "82f20f47eef0bf93f43ee9aca871ada12af43cacf1ccc12212d0a68d8b33fc07"
+    },
+    {
+      "chapter": 47,
+      "title": "第47回 公明輔佐聞太師",
+      "file": "047-第047回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7047",
+      "revision_id": 868559,
+      "source_characters": 6146,
+      "source_missing_glyphs": 0,
+      "sha256": "caa61e076ab760d206687500d78b5a2401ddf9cc7e4da4159f4f7aefdfd728bc"
+    },
+    {
+      "chapter": 48,
+      "title": "第48回 陸壓獻計射公明",
+      "file": "048-第048回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7048",
+      "revision_id": 1962196,
+      "source_characters": 6087,
+      "source_missing_glyphs": 2,
+      "sha256": "bd394400f9ef4736dca40ff2ae1438d9adaab208165a9a2a97a9adb986951f03"
+    },
+    {
+      "chapter": 49,
+      "title": "第49回 武王失陷紅沙陣",
+      "file": "049-第049回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7049",
+      "revision_id": 868561,
+      "source_characters": 5850,
+      "source_missing_glyphs": 0,
+      "sha256": "07a802bc8314add58aa0d893d4f755fff968283bceecfa88a7ced097b51a96ce"
+    },
+    {
+      "chapter": 50,
+      "title": "第50回 三姑計擺黃河陣",
+      "file": "050-第050回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7050",
+      "revision_id": 868562,
+      "source_characters": 5420,
+      "source_missing_glyphs": 0,
+      "sha256": "285b1e9f609cfd9fd7307944f1b0cdbd3114ae7748661bebf68bfa7c9422d28b"
+    },
+    {
+      "chapter": 51,
+      "title": "第51回 子牙劫營破聞仲",
+      "file": "051-第051回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7051",
+      "revision_id": 868563,
+      "source_characters": 5266,
+      "source_missing_glyphs": 0,
+      "sha256": "ae13adb9d2d921d5e777249109613e81b520892c6cb0d523e2561ceb6911ea85"
+    },
+    {
+      "chapter": 52,
+      "title": "第52回 絕龍嶺聞仲歸天",
+      "file": "052-第052回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7052",
+      "revision_id": 1962231,
+      "source_characters": 4856,
+      "source_missing_glyphs": 0,
+      "sha256": "2015dfd1f6bead03c311093966bc027307f8473f63a0885389cb1a5b6f6e7778"
+    },
+    {
+      "chapter": 53,
+      "title": "第53回 鄧九公奉敕西征",
+      "file": "053-第053回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7053",
+      "revision_id": 868565,
+      "source_characters": 5996,
+      "source_missing_glyphs": 2,
+      "sha256": "cfe947a64343567e179173976060c48538614dead1b8b82a5073469c589274d2"
+    },
+    {
+      "chapter": 54,
+      "title": "第54回 土行孫立功顯耀",
+      "file": "054-第054回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7054",
+      "revision_id": 2491739,
+      "source_characters": 5378,
+      "source_missing_glyphs": 0,
+      "sha256": "e9725227a3bd7786f8435ecd62114a68033a18e93331fa1297aea49041140acd"
+    },
+    {
+      "chapter": 55,
+      "title": "第55回 土行孫歸伏西岐",
+      "file": "055-第055回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7055",
+      "revision_id": 2491741,
+      "source_characters": 4056,
+      "source_missing_glyphs": 0,
+      "sha256": "b0268f4569621eb682ab255ba504995d09ddb706f27db2c36580aa1a0bb9c7bc"
+    },
+    {
+      "chapter": 56,
+      "title": "第56回 子牙設計收九公",
+      "file": "056-第056回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7056",
+      "revision_id": 2491742,
+      "source_characters": 8930,
+      "source_missing_glyphs": 0,
+      "sha256": "e96095794ea6ecec8d24eb1852e0da0f81e760efe382bfc53f7f46b74ea412f8"
+    },
+    {
+      "chapter": 57,
+      "title": "第57回 冀州侯蘇護伐西岐",
+      "file": "057-第057回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7057",
+      "revision_id": 2491744,
+      "source_characters": 6918,
+      "source_missing_glyphs": 0,
+      "sha256": "655d95533e56947e3ca5481afcf95212b989150bbb291bd1c38530956e8bcbcc"
+    },
+    {
+      "chapter": 58,
+      "title": "第58回 子牙西岐逢呂岳",
+      "file": "058-第058回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7058",
+      "revision_id": 2036056,
+      "source_characters": 6661,
+      "source_missing_glyphs": 0,
+      "sha256": "41ee3b36501940afa249d5a64b0226e797fe6916b5edf2b97fc9188d8d9bfc39"
+    },
+    {
+      "chapter": 59,
+      "title": "第59回 殷洪下山收四將",
+      "file": "059-第059回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7059",
+      "revision_id": 2491745,
+      "source_characters": 6016,
+      "source_missing_glyphs": 0,
+      "sha256": "e0cd0a829a9d33c9c2b5aba50a292507a11edcf7b8e81f234e0edd10206f7e32"
+    },
+    {
+      "chapter": 60,
+      "title": "第60回 馬元下山助殷洪",
+      "file": "060-第060回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7060",
+      "revision_id": 2491746,
+      "source_characters": 6324,
+      "source_missing_glyphs": 0,
+      "sha256": "4edd915bb19e5f1ae182122ef268851848770c75442d688fe190c8e5c428f74d"
+    },
+    {
+      "chapter": 61,
+      "title": "第61回 太極圖殷洪絕命",
+      "file": "061-第061回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7061",
+      "revision_id": 2491747,
+      "source_characters": 6141,
+      "source_missing_glyphs": 0,
+      "sha256": "73c80c0d2128983560fdb85322f5b66ef23f11bf028ce69c82403fc6a37b1e78"
+    },
+    {
+      "chapter": 62,
+      "title": "第62回 張山李錦伐西岐",
+      "file": "062-第062回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7062",
+      "revision_id": 2491748,
+      "source_characters": 5719,
+      "source_missing_glyphs": 0,
+      "sha256": "61361678b04daeaf48bb8850677e034d143c80eefc32608edfda52bcc28b51eb"
+    },
+    {
+      "chapter": 63,
+      "title": "第63回 申公豹說反殷郊",
+      "file": "063-第063回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7063",
+      "revision_id": 2491749,
+      "source_characters": 7172,
+      "source_missing_glyphs": 0,
+      "sha256": "b24e5c51f654cc278a1ab982cfd7838cbaea17ebb15c5fea4af07adf59fef5d3"
+    },
+    {
+      "chapter": 64,
+      "title": "第64回 羅宣火焚西岐城",
+      "file": "064-第064回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7064",
+      "revision_id": 2491750,
+      "source_characters": 5590,
+      "source_missing_glyphs": 0,
+      "sha256": "3b8947b658db6629c271e107428c07f4884a867c32abe7a8e757bce961f2c343"
+    },
+    {
+      "chapter": 65,
+      "title": "第65回 殷郊岐山受犁鋤",
+      "file": "065-第065回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7065",
+      "revision_id": 2491751,
+      "source_characters": 5422,
+      "source_missing_glyphs": 0,
+      "sha256": "86ff8f60c1be53b65710bec827530db3422d1442d4be528e86fde8c9f09d07a3"
+    },
+    {
+      "chapter": 66,
+      "title": "第66回 洪錦西岐城大戰",
+      "file": "066-第066回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7066",
+      "revision_id": 2491752,
+      "source_characters": 4701,
+      "source_missing_glyphs": 0,
+      "sha256": "9779a400536fed28351c8b6d1cad7d796fa61fcacc80e104a6a8f63419b8275d"
+    },
+    {
+      "chapter": 67,
+      "title": "第67回 姜子牙金臺拜將",
+      "file": "067-第067回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7067",
+      "revision_id": 2491753,
+      "source_characters": 6846,
+      "source_missing_glyphs": 0,
+      "sha256": "07f7a829c39c82388539add89591a34d8e5471d713725aecfaae4ce6817d1537"
+    },
+    {
+      "chapter": 68,
+      "title": "第68回 首陽山夷齊阻兵",
+      "file": "068-第068回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7068",
+      "revision_id": 876977,
+      "source_characters": 5212,
+      "source_missing_glyphs": 0,
+      "sha256": "f9f1f1b0a67ad0c643afe6ec2c3592acd0a66142dde2ad7c1127184b2231d2ae"
+    },
+    {
+      "chapter": 69,
+      "title": "第69回 孔宣兵阻金雞嶺",
+      "file": "069-第069回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7069",
+      "revision_id": 7903840,
+      "source_characters": 6261,
+      "source_missing_glyphs": 0,
+      "sha256": "62dcff90b3cb9576dbf5b1bfbe9f4ee686aa947831821993fb47ba6dd7886852"
+    },
+    {
+      "chapter": 70,
+      "title": "第70回 準提道人收孔宣",
+      "file": "070-第070回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7070",
+      "revision_id": 876981,
+      "source_characters": 5615,
+      "source_missing_glyphs": 0,
+      "sha256": "6e966250159960f077ee07942698e026dbedd9e1a08ee1a62744e0a54543be46"
+    },
+    {
+      "chapter": 71,
+      "title": "第71回 姜子牙三路分兵",
+      "file": "071-第071回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7071",
+      "revision_id": 876985,
+      "source_characters": 5330,
+      "source_missing_glyphs": 0,
+      "sha256": "29249fec3fcdb405b8a14ff377c1d3f5b508341dd0cdff369e7dcf034dc02ebb"
+    },
+    {
+      "chapter": 72,
+      "title": "第72回 廣成子三謁碧游宮",
+      "file": "072-第072回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7072",
+      "revision_id": 876984,
+      "source_characters": 5873,
+      "source_missing_glyphs": 0,
+      "sha256": "96e7678f3eefd5267e6e1022378850f89305f6ef0e7384489c54510f065c7a0c"
+    },
+    {
+      "chapter": 73,
+      "title": "第73回 青龍關飛虎折兵",
+      "file": "073-第073回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7073",
+      "revision_id": 1518197,
+      "source_characters": 6182,
+      "source_missing_glyphs": 0,
+      "sha256": "530679321be21e8409ad1fff85f94297bdae31a8b066ef9c8a2e338781ee077d"
+    },
+    {
+      "chapter": 74,
+      "title": "第74回 哼哈二將顯神通",
+      "file": "074-第074回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7074",
+      "revision_id": 1518198,
+      "source_characters": 6829,
+      "source_missing_glyphs": 0,
+      "sha256": "d5d4210bf31ed908ba2da940bd09fe145df96498e9c21b9b715835834ab0813c"
+    },
+    {
+      "chapter": 75,
+      "title": "第75回 土行孫盜騎陷身",
+      "file": "075-第075回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7075",
+      "revision_id": 1518199,
+      "source_characters": 8256,
+      "source_missing_glyphs": 0,
+      "sha256": "a0f1609caa9c1d27e89def76ec8ebcdb737ea96dd991a7933d10a43aff6a13e1"
+    },
+    {
+      "chapter": 76,
+      "title": "第76回 鄭倫捉將取汜水",
+      "file": "076-第076回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7076",
+      "revision_id": 1518200,
+      "source_characters": 6314,
+      "source_missing_glyphs": 0,
+      "sha256": "2fd289966808d12a4e23607cf09236f1535b933123904cdb77c907a741df55e0"
+    },
+    {
+      "chapter": 77,
+      "title": "第77回 老子一炁化三清",
+      "file": "077-第077回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7077",
+      "revision_id": 2366242,
+      "source_characters": 4829,
+      "source_missing_glyphs": 0,
+      "sha256": "307ef5dc66ca658b490fc578a5203a8ecff0b33c6fc1344df9bece3c57a2a2fe"
+    },
+    {
+      "chapter": 78,
+      "title": "第78回 三教會破誅仙陣",
+      "file": "078-第078回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7078",
+      "revision_id": 1518202,
+      "source_characters": 6577,
+      "source_missing_glyphs": 0,
+      "sha256": "8bea02a994bb7c4ec25e1544dc2bd24a00473373e69eb8e1e677e20c981351a4"
+    },
+    {
+      "chapter": 79,
+      "title": "第79回 穿雲關四將被擒",
+      "file": "079-第079回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7079",
+      "revision_id": 1518203,
+      "source_characters": 6103,
+      "source_missing_glyphs": 0,
+      "sha256": "76e4f7bc8780c9438f9a57d43c7a7636e855b3e77bd58574e0f1f67cdb1353d4"
+    },
+    {
+      "chapter": 80,
+      "title": "第80回 楊任下山破瘟司",
+      "file": "080-第080回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7080",
+      "revision_id": 1518204,
+      "source_characters": 6663,
+      "source_missing_glyphs": 0,
+      "sha256": "d0e785910fce702c89f7aaecaad5691931e9f777628859b3e30ad2c144fac278"
+    },
+    {
+      "chapter": 81,
+      "title": "第81回 子牙潼關遇痘神",
+      "file": "081-第081回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7081",
+      "revision_id": 2004324,
+      "source_characters": 6529,
+      "source_missing_glyphs": 0,
+      "sha256": "1de3592c049dd53fac84a4f0275e4b31b06834e4a4e4aa353c9f01a24e545341"
+    },
+    {
+      "chapter": 82,
+      "title": "第82回 三教大會萬仙陣",
+      "file": "082-第082回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7082",
+      "revision_id": 1518206,
+      "source_characters": 5412,
+      "source_missing_glyphs": 0,
+      "sha256": "b6a0e6a22d2a99575918daa40f008ec8979b09e22a52a1ad73c31acdec0bd191"
+    },
+    {
+      "chapter": 83,
+      "title": "第83回 三大師收獅象犼",
+      "file": "083-第083回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7083",
+      "revision_id": 2004315,
+      "source_characters": 6968,
+      "source_missing_glyphs": 0,
+      "sha256": "c578ce1b0b867d5afc3ca812bdf5ebb893d5a52e5c035d3f0bbf28b395a7cf1d"
+    },
+    {
+      "chapter": 84,
+      "title": "第84回 子牙兵取臨潼關",
+      "file": "084-第084回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7084",
+      "revision_id": 873510,
+      "source_characters": 8066,
+      "source_missing_glyphs": 0,
+      "sha256": "1ec0c34e35ade107aca81f90194c7cdbf94579e18bca37e2c9495e7c26eb617d"
+    },
+    {
+      "chapter": 85,
+      "title": "第85回 鄧芮二侯歸周主",
+      "file": "085-第085回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7085",
+      "revision_id": 868582,
+      "source_characters": 7869,
+      "source_missing_glyphs": 0,
+      "sha256": "87627d0e994051055d3f94b627d28355a41284c953b0c5846a4b98c36b99cf64"
+    },
+    {
+      "chapter": 86,
+      "title": "第86回 澠池縣五岳歸天",
+      "file": "086-第086回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7086",
+      "revision_id": 1748320,
+      "source_characters": 6222,
+      "source_missing_glyphs": 0,
+      "sha256": "dfe64892a133107a4f4b39c9b74452d6e474eaff367dc2148fc67a205e8c589f"
+    },
+    {
+      "chapter": 87,
+      "title": "第87回 土行孫夫妻陣亡",
+      "file": "087-第087回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7087",
+      "revision_id": 868584,
+      "source_characters": 5856,
+      "source_missing_glyphs": 0,
+      "sha256": "1d70141d96bfed1b507d235f58be8771b8a15f8c5d9d582cb9e917a6337d5fbb"
+    },
+    {
+      "chapter": 88,
+      "title": "第88回 武王白魚跳龍舟",
+      "file": "088-第088回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7088",
+      "revision_id": 868585,
+      "source_characters": 5903,
+      "source_missing_glyphs": 0,
+      "sha256": "fa5e7a8a4a9606da90a1fd74e94b71b7ab353c1dd042a805af20965cc7162074"
+    },
+    {
+      "chapter": 89,
+      "title": "第89回 紂王敲骨剖孕婦",
+      "file": "089-第089回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7089",
+      "revision_id": 868586,
+      "source_characters": 5783,
+      "source_missing_glyphs": 0,
+      "sha256": "35d4c528a7ccca163c7df232ae1ef9e8a623466e9492bf5aa6527db6504cb15b"
+    },
+    {
+      "chapter": 90,
+      "title": "第90回 子牙捉神荼鬱壘",
+      "file": "090-第090回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7090",
+      "revision_id": 868587,
+      "source_characters": 4796,
+      "source_missing_glyphs": 0,
+      "sha256": "17e1059899456edc97da5812b6ea2692e1a36be748828f47e9ceae8ef395530a"
+    },
+    {
+      "chapter": 91,
+      "title": "第91回 蟠龍嶺燒鄔文化",
+      "file": "091-第091回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7091",
+      "revision_id": 2004334,
+      "source_characters": 5879,
+      "source_missing_glyphs": 0,
+      "sha256": "020a9a61555875e74bc6e78cca0f3f8b6793e115a76412c2f549061a00459f7c"
+    },
+    {
+      "chapter": 92,
+      "title": "第92回 楊戩哪吒收七怪",
+      "file": "092-第092回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7092",
+      "revision_id": 868589,
+      "source_characters": 7235,
+      "source_missing_glyphs": 0,
+      "sha256": "f928e6711a6c7407d9d088df38388f447aad8623ae1fda0b70dd1b1e9896f664"
+    },
+    {
+      "chapter": 93,
+      "title": "第93回 金吒智取游魂關",
+      "file": "093-第093回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7093",
+      "revision_id": 868590,
+      "source_characters": 5905,
+      "source_missing_glyphs": 0,
+      "sha256": "8504b597236f07fc45a1285d11c79971c6865292a9486bdd4bd42149672ceedd"
+    },
+    {
+      "chapter": 94,
+      "title": "第94回 文煥怒斬殷破敗",
+      "file": "094-第094回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7094",
+      "revision_id": 868597,
+      "source_characters": 6141,
+      "source_missing_glyphs": 0,
+      "sha256": "045d00cf72d49700b1b28ae8fc565750cb9367375a4618cda325273fb317cfc4"
+    },
+    {
+      "chapter": 95,
+      "title": "第95回 子牙暴紂王十罪",
+      "file": "095-第095回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7095",
+      "revision_id": 6188943,
+      "source_characters": 5213,
+      "source_missing_glyphs": 0,
+      "sha256": "03ec16d69bda858ae3e30cb238529b2e181c6102cfb5a74fc27923008a205d3e"
+    },
+    {
+      "chapter": 96,
+      "title": "第96回 子牙發柬擒妲己",
+      "file": "096-第096回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7096",
+      "revision_id": 868593,
+      "source_characters": 4910,
+      "source_missing_glyphs": 0,
+      "sha256": "f4338a1248c1d6338267e001382f952a033a042b94cf3e557ec655927bee43b1"
+    },
+    {
+      "chapter": 97,
+      "title": "第97回 摘星樓紂王自焚",
+      "file": "097-第097回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7097",
+      "revision_id": 1962242,
+      "source_characters": 5486,
+      "source_missing_glyphs": 0,
+      "sha256": "d6afae7990fd6d5c642692220ed65bde559e9ef1a920946bc738a01c6be678fa"
+    },
+    {
+      "chapter": 98,
+      "title": "第98回 周武王鹿臺散財",
+      "file": "098-第098回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7098",
+      "revision_id": 868595,
+      "source_characters": 7446,
+      "source_missing_glyphs": 0,
+      "sha256": "32a3b29f39e10857c59ad034c1bec81119f0609c8491cbcb220e4eef093a4ad8"
+    },
+    {
+      "chapter": 99,
+      "title": "第99回 姜子牙歸國封神",
+      "file": "099-第099回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7099",
+      "revision_id": 1741589,
+      "source_characters": 7340,
+      "source_missing_glyphs": 0,
+      "sha256": "ba1d8ca2660a2eee7e81ffd2d130a421451c69d44de094fe5e626ddd04102dd9"
+    },
+    {
+      "chapter": 100,
+      "title": "第100回 武王封列國諸侯",
+      "file": "100-第100回.md",
+      "source": "https://zh.wikisource.org/wiki/%E5%B0%81%E7%A5%9E%E6%BC%94%E7%BE%A9/%E5%8D%B7100",
+      "revision_id": 2325731,
+      "source_characters": 4980,
+      "source_missing_glyphs": 0,
+      "sha256": "864b58800bda61dede90b7e6ea7523482d4870850c0b03598b8e1139aa74d155"
+    }
+  ]
+}

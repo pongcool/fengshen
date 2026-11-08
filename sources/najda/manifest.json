@@ -1,0 +1,108 @@
+{
+  "repository": "pongcool/fengshen",
+  "release": "sources-v1",
+  "source": "https://commons.wikimedia.org/wiki/Category:新刻鍾伯敬先生批評封神演義",
+  "edition": "新刻鍾伯敬先生批評封神演義; 金閶載陽舒文淵; 附001-0003",
+  "files": [
+    {
+      "file": "vol01.pdf",
+      "size": 35121774,
+      "sha256": "71f18fd579ebdf3f4cbdaa415132f156132846190d13a49256e1e592b82068b0"
+    },
+    {
+      "file": "vol02.pdf",
+      "size": 18583634,
+      "sha256": "98dc154ccc44341cddd3593018e0419fca14937dd711504a082bc033c56ea5f3"
+    },
+    {
+      "file": "vol03.pdf",
+      "size": 17116214,
+      "sha256": "3c3c55d275d990e5ac452b9f010a879f7229e2a8d6c19d571d92ba118531a762"
+    },
+    {
+      "file": "vol04.pdf",
+      "size": 16150923,
+      "sha256": "988fa96030278262d84d72dc0e85afa4cc84ff87512ebf582800d4873a670d54"
+    },
+    {
+      "file": "vol05.pdf",
+      "size": 15265103,
+      "sha256": "ed50bbeb311f787fd5a1d03e6fa2fbc533adaf50afc9ba8f0943e12102a6c89e"
+    },
+    {
+      "file": "vol06.pdf",
+      "size": 16044830,
+      "sha256": "caecf1ed2c50fcc652284a17003ba9086978f5ed628eca5771647b080db20ea9"
+    },
+    {
+      "file": "vol07.pdf",
+      "size": 14298665,
+      "sha256": "3a0fd331a2680c90292304583f3059cecfba79ee752bef3118257bd54c1d7b28"
+    },
+    {
+      "file": "vol08.pdf",
+      "size": 17799788,
+      "sha256": "99ff2ed6e67fbe34b615a84ba294aa014500f1370466741f16ab101387640694"
+    },
+    {
+      "file": "vol09.pdf",
+      "size": 17500351,
+      "sha256": "54550df0714c9be8293457f92d4b2be156dcf344356f47bdc2160d16c8d3f0e0"
+    },
+    {
+      "file": "vol10.pdf",
+      "size": 17285706,
+      "sha256": "434dece20e8623ae4ffdc44e74a4eb2461cb2b198ff2227308de177a69b828d4"
+    },
+    {
+      "file": "vol11.pdf",
+      "size": 15342039,
+      "sha256": "b6d685976b9f5962b144c129029d8e6274de2f3b05b5a9a50bec9c7bd84eedc2"
+    },
+    {
+      "file": "vol12.pdf",
+      "size": 19377800,
+      "sha256": "8626fc5e0a2852f9d3ad8a0f78b01fdec260ce20255f68d788c8834dad9af98f"
+    },
+    {
+      "file": "vol13.pdf",
+      "size": 17677294,
+      "sha256": "abddb730587fb6a36fb656c64daa9eb1eac2a7916c9f5f6f7cfd036b42a809d5"
+    },
+    {
+      "file": "vol14.pdf",
+      "size": 17778973,
+      "sha256": "d55deaaabed42a2db0f336162e332d82eca33abedabd39cf8c7c4c08be1a73bb"
+    },
+    {
+      "file": "vol15.pdf",
+      "size": 19377591,
+      "sha256": "811a69bed0cbe6862a99267c6efa71065be1c35ab4435b50a9037f74b646bd8f"
+    },
+    {
+      "file": "vol16.pdf",
+      "size": 19073270,
+      "sha256": "581700f849ac63c3109d51c264bff6120ddd7c7b3de8f01f7588b7107a05c8fc"
+    },
+    {
+      "file": "vol17.pdf",
+      "size": 22120494,
+      "sha256": "badfbf704d75e0081c1d5de3fc597f2be6ddb7f90661d5323707ac897af587cf"
+    },
+    {
+      "file": "vol18.pdf",
+      "size": 16944730,
+      "sha256": "4423de204c8d61c523bf8b61c7f5bc255b0745eab7cee4cdb1875a4f36e1cd3d"
+    },
+    {
+      "file": "vol19.pdf",
+      "size": 18266635,
+      "sha256": "361e9a80996addd43180e6cf8c709218e8b0b120b0297f371182cfb4bb0062ab"
+    },
+    {
+      "file": "vol20.pdf",
+      "size": 19609426,
+      "sha256": "0ed359588a43603e8008511f10328e4b3d9eadeeba9ae728a26e909fcaaca034"
+    }
+  ]
+}

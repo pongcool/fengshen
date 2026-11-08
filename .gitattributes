@@ -1,0 +1,2 @@
+# Preserve the exact bytes recorded in the Wikisource checksums on every OS.
+sources/zh.wikisource/** -text whitespace=cr-at-eol

@@ -2,7 +2,8 @@ __pycache__/
 *.pyc
 
 # สแกนต้นฉบับพิมพ์ (ไฟล์ใหญ่ ไม่เก็บใน git)
-sources/
+sources/najda/*.pdf
+sources/najda/*.part
 
 # ไฟล์รวมเล่มที่สร้างจาก tools/build_book.py
 build/
