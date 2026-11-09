@@ -111,3 +111,8 @@
 - แก้ `tools/build_book.py`: id ของ manifest/spine ใช้ `s-{slug}` (ชื่อไฟล์และ href ไม่เปลี่ยน, HTML ไม่กระทบ)
 - รอบสอง: “No errors or warnings detected” (0 fatals / 0 errors / 0 warnings)
 - ยังไม่ได้ทดสอบกับโปรแกรมอ่าน EPUB จริง (การแสดงผลอักษรไทยและลิงก์เชิงอรรถ) ให้ผู้ใช้ทดสอบ
+
+## ตรวจก่อนออกรุ่น v.1.1 (Claude, 2026-11-09)
+- รวมเล่มจาก `a9de0de`: รายชื่อตัวละคร 392 รายการ (v.1: 372), ดัชนีของวิเศษ ค่ายกล และวิชา 496 รายการ (v.1: 470), 104 ส่วน เชิงอรรถ 175; เนื้อเรื่องไม่เปลี่ยนจาก v.1
+- ที่มาของการเปลี่ยนภาคผนวก: reviews/CHARACTERS_C294_C295.md, reviews/CHARACTERS_C296_C306.md, reviews/CHARACTERS_C307_C312.md (ผ่านตรวจอิสระของ Codex ทุกชุด)
+- epubcheck 5.1.0 (กติกา EPUB 3.3): “No errors or warnings detected” (0 fatals / 0 errors / 0 warnings / 0 infos)
