@@ -5,7 +5,7 @@
 
 ใช้ไลบรารีมาตรฐานเท่านั้น แปลงเฉพาะ Markdown ที่โครงการใช้: หัวบท (#, ##), ย่อหน้า, บทกวีแบบ >,
 รายการ -, ตัวหนา **…**, เชิงอรรถ [^id] / [^id]: ข้อความ และตัดป้าย <!-- ยN --> ออก
-ส่วนหน้าอยู่ใน book/*.md; ภาคผนวก (รายชื่อตัวละคร, ดัชนีของวิเศษ ค่ายกล วิชา) สร้างจาก
+ส่วนหน้าอยู่ใน book/*.md; ภาคผนวก (รายชื่อตัวละคร, ทำเนียบเทพที่แต่งตั้ง, ดัชนีของวิเศษ ค่ายกล วิชา) สร้างจาก
 CHARACTERS.md และ GLOSSARY.md โดยหาบทที่ปรากฏครั้งแรกจากคำแปล ไม่เติมคำอธิบายที่ต้นฉบับไม่ได้ให้
 """
 import argparse
@@ -186,7 +186,8 @@ def appendix_characters(src, th):
             people = list(zip(zh_forms, th_forms))
         for zh, name in people:
             if len(people) > 1:
-                ch = first_chapter(zh, name, src, th)
+                # ถ้าหาไม่พบ (เช่น รูปในแถวต่างจากรูปในไฟล์ต้นฉบับ C268 鄭椿/鄭樁) ใช้บทแรกในช่องอ้างอิงแทนการตัดทิ้ง
+                ch = first_chapter(zh, name, src, th, refs)
             else:
                 ch = refs[0] if refs else first_chapter(zh, name, src, th)
             if ch:
@@ -195,6 +196,115 @@ def appendix_characters(src, th):
     out = ["# รายชื่อตัวละคร", "", "เรียงตามบทที่ปรากฏครั้งแรก ชื่อเดียวกันอาจมีฉายาหรือคำเรียกอื่นในเนื้อเรื่อง ชื่อที่ซ้ำกันแต่บทแรกต่างกันเป็นคนละคน", ""]
     body = "".join(f"<tr><td>{esc(n)}</td><td>{esc(z)}</td><td>{ch}</td></tr>" for ch, n, z in rows)
     return out, f"<table><tr><th>ชื่อไทย</th><th>ชื่อจีน</th><th>บทแรก</th></tr>{body}</table>", len(rows)
+
+
+# ทำเนียบเทพบท 099: เทพที่ต้นฉบับแต่งตั้งในร้อยแก้ว (ไม่มีบรรทัด 姓諱名) ระบุ (ย, ตำแหน่งจีนตามแถว GLOSSARY, ชื่อจีน)
+# ตำแหน่งไทยดึงจาก GLOSSARY และชื่อไทยดึงจาก CHARACTERS/GLOSSARY ตามรูปจีน
+GOD_DECREES = [
+    (9, "三界首領八部三百六十五位清福正神", ["柏鑑"]),
+    (9, "管領三山正神炳靈公", ["黃天化"]),
+    (9, "東岳泰山天齊仁聖大帝", ["黃飛虎"]),
+    (9, "南岳衡山司天昭聖大帝", ["崇黑虎"]),
+    (9, "中岳嵩山中天崇聖大帝", ["聞聘"]),
+    (9, "北岳恆山安天玄聖大帝", ["崔英"]),
+    (9, "西岳華山金天順聖大帝", ["蔣雄"]),
+    (10, "九天應元雷聲普化天尊", ["聞仲"]),
+    (22, "南方三氣火德星君", ["羅宣"]),
+    (27, "主掌瘟㾮昊天大帝", ["呂岳"]),
+    (35, "坎宮斗母正神", ["金靈聖母"]),
+    (187, "執年歲君太歲之神", ["殷郊"]),
+    (187, "甲子太歲之神", ["楊任"]),
+    (197, "金龍如意正一龍虎玄壇真君", ["趙公明"]),
+    (201, "增長天王", ["魔禮青"]),
+    (202, "廣目天王", ["魔禮紅"]),
+    (203, "多文天王", ["魔禮海"]),
+    (204, "持國天王", ["魔禮壽"]),
+    (205, "哼哈二將之神", ["鄭倫", "陳奇"]),
+    (205, "主痘碧霞元君", ["余化龍"]),
+    (205, "衛房聖母元君", ["金氏"]),
+    (211, "感應隨世仙姑正神", ["雲霄", "瓊霄", "碧霄"]),
+    (213, "分水將軍", ["申公豹"]),
+]
+# 099 ย19 ตำแหน่งที่ต้นฉบับบอกตัวบุคคลในวงเล็บ (閃電神（即金光聖母）)
+GOD_ALIASES = {"閃電神": "金光聖母", "助風神": "菡芝仙"}
+# รูปจีนในบท 099 ที่ต่างจากแถวบุคคล (S636 聞聘 = 文聘) ใช้หาชื่อไทยเท่านั้น คงรูปจีนตามต้นฉบับ
+GOD_NAME_VARIANTS = {"聞聘": "文聘"}
+# บรรทัดรายชื่อที่ไม่มีตำแหน่งกำกับ และตำแหน่งประกาศไว้ในร้อยแก้วย่อหน้าก่อน (099 ย194 四聖)
+GOD_PARA_TITLE = {195: "鎮守靈霄寶殿四聖大元帥", 196: "鎮守靈霄寶殿四聖大元帥"}
+
+
+def form_pairs(path, kinds=None, col=0):
+    """จับคู่รูปจีน–ไทยในแถวเอกสารกลาง (col = คอลัมน์จีน): จำนวนเท่ากันจับคู่ตามลำดับ ไม่เท่ากันจับเฉพาะรูปแรก"""
+    pairs = {}
+    for c in table_rows(path):
+        if len(c) < col + 3 or (kinds and not any(c[col + 2].startswith(k) for k in kinds)):
+            continue
+        if col and not re.fullmatch(r"C\d+", c[0]):
+            continue
+        zf, tf = split_cell(c[col]), split_cell(c[col + 1])
+        if not zf or not tf:
+            continue
+        for z, t in (zip(zf, tf) if len(zf) == len(tf) else [(zf[0], tf[0])]):
+            pairs.setdefault(z, t)
+    return pairs
+
+
+def parse_god(z, t):
+    """'尾火虎 朱諱晤' / 'เหว่ยหั่วหู่ นามจูอู้' -> (ตำแหน่งจีน, ตำแหน่งไทย, ชื่อจีน, ชื่อไทย)"""
+    if " " not in z:
+        return "", "", z.replace("諱", ""), t
+    zt, _, zn = z.rpartition(" ")
+    tt, _, tn = t.rpartition(" นาม") if " นาม" in t else t.partition(" ")
+    if zn.startswith("諱"):  # 鄧天君 諱忠: แซ่อยู่ในตำแหน่ง
+        zn, tn = zt[0] + zn, tt.replace("เทียนจวิน", "") + tn
+    return zt, tt, zn.replace("諱", ""), tn
+
+
+def appendix_gods(src, th):
+    paras = [l for l in src["099"].splitlines()[1:] if l.strip()]
+    th_paras = {int(m.group(1)): m.group(2).strip()
+                for m in re.finditer(r"<!--\s*ย(\d+)\s*-->\n(.*?)(?=\n<!--|\Z)", th["099"], re.S)}
+    headers = [i for i, p in enumerate(paras, 1) if "名諱" in p and p.rstrip().endswith("：")]
+    titles = form_pairs("GLOSSARY.md", ("ตำแหน่งเทพ",))
+    # ชื่อไทยของบุคคล: CHARACTERS ก่อน แล้วจึงแถวบุคคลและตำแหน่งเทพใน GLOSSARY (เช่น 金氏 นางจิน)
+    names = {**form_pairs("GLOSSARY.md", ("บุคคล", "ผู้บำเพ็ญ", "ตำแหน่งเทพ")),
+             **form_pairs("CHARACTERS.md", col=1)}
+    entries = []
+    for y, zt, zns in GOD_DECREES:
+        for zn in zns:
+            entries.append((y, 0, zt, titles[zt], zn, names[GOD_NAME_VARIANTS.get(zn, zn)]))
+    prev = None
+    for c in table_rows("GLOSSARY.md"):
+        if len(c) < 5 or not c[2].startswith("นามเทพที่แต่งตั้ง"):
+            continue
+        zf, tf = [x.strip() for x in c[0].split(" / ")], [x.strip() for x in c[1].split(" / ")]
+        y = int(re.search(r"ย(\d+)", c[4]).group(1))
+        for z, t in zip(zf, tf):
+            zt, tt, zn, tn = parse_god(z, t)
+            if zn in GOD_ALIASES:
+                zt, tt, zn = zn, tn, GOD_ALIASES[zn]
+                tn = names[zn]
+            sec = max(h for h in headers if h <= y)
+            if not zt and y in GOD_PARA_TITLE:
+                zt = GOD_PARA_TITLE[y]
+                tt = titles[zt]
+            elif not zt and prev and prev[0] == sec:
+                zt, tt = prev[1], prev[2]
+            elif not zt:  # ใช้หัวรายชื่อ เช่น 隨斗部九曜星官名諱
+                zt = paras[sec - 1].strip().split("名諱")[0]
+                tt = re.sub(r"\s*\(.*?\)|:$", "", th_paras[sec]).removeprefix("นามของ").removeprefix("นาม").strip()
+            if zt and y not in GOD_PARA_TITLE:
+                prev = (sec, zt, tt)
+            entries.append((y, 1, zt, tt, zn, tn))
+    entries = [e for _, e in sorted(enumerate(entries), key=lambda x: (x[1][0], x[1][1], x[0]))]
+    out = ["# ทำเนียบเทพที่แต่งตั้ง", "",
+           "นามเทพที่จื่อหยาแต่งตั้งบนแท่นแต่งตั้งเทพในบทที่ 99 เรียงตามลำดับที่ประกาศในบท "
+           "ชื่อบุคคลเขียนแซ่ต่อด้วยนาม ตำแหน่งใช้ตามคำแปลบทที่ 99 "
+           "ผู้ที่มีบทบาทในเนื้อเรื่องดูบทที่ปรากฏครั้งแรกได้ใน “รายชื่อตัวละคร”", ""]
+    body = "".join(f"<tr><td>{esc(tn)}</td><td>{esc(zn)}</td><td>{esc(tt)}</td><td>{esc(zt)}</td></tr>"
+                   for _, _, zt, tt, zn, tn in entries)
+    return out, ("<table><tr><th>ชื่อไทย</th><th>ชื่อจีน</th><th>ตำแหน่งเทพ</th><th>ตำแหน่ง (จีน)</th></tr>"
+                 f"{body}</table>"), len(entries)
 
 
 def item_type(cell):
@@ -250,7 +360,7 @@ def collect():
     for n, text in th.items():
         title, body = convert(text, f"ch{n}")
         sections.append((f"ch{n}", title, body))
-    for slug, fn in (("zz-characters", appendix_characters), ("zz-items", appendix_items)):
+    for slug, fn in (("zz-characters", appendix_characters), ("zz-gods", appendix_gods), ("zz-items", appendix_items)):
         head, table, count = fn(src, th)
         title, body = convert("\n".join(head), slug)
         sections.append((slug, title, body + table))
