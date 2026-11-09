@@ -236,7 +236,8 @@ def appendix_items(src, th):
                 rows.append((ch, t, z, kind))
     rows.sort()
     out = ["# ดัชนีของวิเศษ ค่ายกล และวิชา", "", "เรียงตามบทที่ปรากฏครั้งแรก คุณสมบัติของแต่ละรายการให้อ่านจากเนื้อเรื่องและเชิงอรรถ", ""]
-    body = "".join(f"<tr><td>{esc(t)}</td><td>{esc(z)}</td><td>{esc(k)}</td><td>{ch}</td></tr>" for ch, t, z, k in rows)    return out, f"<table><tr><th>ชื่อไทย</th><th>ชื่อจีน</th><th>ประเภท</th><th>บทแรก</th></tr>{body}</table>", len(rows)
+    body = "".join(f"<tr><td>{esc(t)}</td><td>{esc(z)}</td><td>{esc(k)}</td><td>{ch}</td></tr>" for ch, t, z, k in rows)
+    return out, f"<table><tr><th>ชื่อไทย</th><th>ชื่อจีน</th><th>ประเภท</th><th>บทแรก</th></tr>{body}</table>", len(rows)
 
 
 def collect():
