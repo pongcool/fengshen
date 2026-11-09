@@ -23,6 +23,13 @@ CREATOR = "แปลโดย Claude (Anthropic) ตรวจโดย Codex (Op
 RIGHTS = "คำแปลอนุญาตภายใต้ CC BY-NC 4.0 (ห้ามใช้เพื่อการค้า) ต้นฉบับจีนเป็นสาธารณสมบัติ"
 BOOK_ID = "urn:uuid:" + str(uuid.uuid5(uuid.NAMESPACE_URL, "hongsin-fengshen-yanyi-th"))
 ITEM_TYPES = {"ของวิเศษ", "ค่ายกล", "วิชา", "อาวุธ", "พาหนะ"}
+# ประเภทใน GLOSSARY ที่ไม่ได้ขึ้นต้นด้วย ITEM_TYPES แต่ควรอยู่ในดัชนี: คำนำหน้าประเภท -> ประเภทที่แสดง
+TYPE_MAP = {"สัตว์พาหนะ": "พาหนะ", "กลุ่มค่ายกล": "ค่ายกล", "ไฟวิเศษ": "วิชา", "ผลไม้เซียน": "ของวิเศษ"}
+# ไม่รวมเครื่องทรมาน (炮烙 蠆盆 酒池) เพราะไม่ใช่ของวิเศษ ค่ายกล หรือวิชา
+# แถวที่ประเภทกว้างเกินจะจับด้วยคำนำหน้า (สัตว์ ผลไม้ คัมภีร์ สิ่งก่อสร้าง การทำนาย) ระบุด้วยรูปจีนแรกของแถว
+ITEM_ZH = {"封神榜": "คัมภีร์", "封神臺": "สิ่งก่อสร้าง", "紅杏": "ของวิเศษ", "先天數": "วิชา",
+           "哮天犬": "สัตว์วิเศษ", "鐵嘴神鷹": "สัตว์วิเศษ",
+           "白象": "พาหนะ", "青毛獅子": "พาหนะ", "金毛犼": "พาหนะ"}
 # แถว CHARACTERS ที่จีน/ไทยหลายรูปเป็นชื่อเรียกของคนเดียว (ตรวจจากช่องข้อมูลเมื่อ 2026-11-07, RBUILD-C3)
 ALIAS_ROWS = {"C078", "C081", "C159", "C160", "C164", "C167", "C170", "C236", "C277"}
 # 月合老人 กับ 月合仙翁 เป็นคนเดียวกัน ส่วน 符元仙翁 เป็นอีกองค์
@@ -194,6 +201,9 @@ def item_type(cell):
     for t in ITEM_TYPES:
         if cell.startswith(t):
             return t
+    for prefix, t in TYPE_MAP.items():
+        if cell.startswith(prefix):
+            return t
     return None
 
 
@@ -202,14 +212,21 @@ def appendix_items(src, th):
     for c in table_rows("GLOSSARY.md"):
         if len(c) < 3:
             continue
-        kind = item_type(c[2])
-        if not kind:
-            continue
         zh_forms, th_forms = split_cell(c[0]), split_cell(c[1])
+        kind = ITEM_ZH.get(zh_forms[0]) if zh_forms else None
+        kind = kind or item_type(c[2])
+        # แถวที่รวมคนกับของ (เช่น 火靈聖母 / 金霞冠 ประเภท "ผู้บำเพ็ญ / ของวิเศษ") แยกประเภทตามลำดับรูป
+        part_kinds = [item_type(p.strip()) for p in c[2].split(" / ")]
+        if not kind and not any(part_kinds):
+            continue
         if len(zh_forms) != len(th_forms):
             zh_forms, th_forms = zh_forms[:1], th_forms[:1]
-        for z, t in zip(zh_forms, th_forms):
-            if "…" in t or z in seen or not re.fullmatch(r"[㐀-鿿豈-﫿]{2,}", z):
+        if kind or len(part_kinds) != len(zh_forms):
+            kinds = [kind or next(k for k in part_kinds if k)] * len(zh_forms)
+        else:
+            kinds = part_kinds
+        for z, t, kind in zip(zh_forms, th_forms, kinds):
+            if not kind or "…" in t or z in seen or not re.fullmatch(r"[㐀-鿿豈-﫿]{2,}", z):
                 continue
             refs = ref_chapters(c[4]) if len(c) > 4 else []
             # แถวรายการเดียวที่มีตำแหน่งอ้างอิง ใช้บทแรกตามเอกสารกลาง (เช่น 金箍 ของหม่าซุ่ย 082 ไม่ใช่ห่วงคาดหัวใน 074)
@@ -219,8 +236,7 @@ def appendix_items(src, th):
                 rows.append((ch, t, z, kind))
     rows.sort()
     out = ["# ดัชนีของวิเศษ ค่ายกล และวิชา", "", "เรียงตามบทที่ปรากฏครั้งแรก คุณสมบัติของแต่ละรายการให้อ่านจากเนื้อเรื่องและเชิงอรรถ", ""]
-    body = "".join(f"<tr><td>{esc(t)}</td><td>{esc(z)}</td><td>{esc(k)}</td><td>{ch}</td></tr>" for ch, t, z, k in rows)
-    return out, f"<table><tr><th>ชื่อไทย</th><th>ชื่อจีน</th><th>ประเภท</th><th>บทแรก</th></tr>{body}</table>", len(rows)
+    body = "".join(f"<tr><td>{esc(t)}</td><td>{esc(z)}</td><td>{esc(k)}</td><td>{ch}</td></tr>" for ch, t, z, k in rows)    return out, f"<table><tr><th>ชื่อไทย</th><th>ชื่อจีน</th><th>ประเภท</th><th>บทแรก</th></tr>{body}</table>", len(rows)
 
 
 def collect():
