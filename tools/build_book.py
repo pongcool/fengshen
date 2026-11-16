@@ -58,6 +58,7 @@ CSS = """
 body { font-family: "Sarabun", "Noto Serif Thai", "Noto Sans Thai", "Tahoma", serif; line-height: 1.8; margin: 0 auto; max-width: 42em; padding: 0 1em; }
 h1 { font-size: 1.5em; margin: 2em 0 1em; text-align: center; }
 h2 { font-size: 1.2em; margin: 1.5em 0 0.5em; }
+h3 { font-size: 1.05em; margin: 1.2em 0 0.4em; }
 p { margin: 0 0 0.8em; text-indent: 0; }
 blockquote { margin: 0.6em 0 1em 1.5em; padding: 0; }
 blockquote p { margin: 0 0 0.2em; }
@@ -126,6 +127,9 @@ def convert(md, slug):
         if line.startswith("# "):
             title = line[2:].strip()
             parts.append(f"<h1>{inline(title, fnmap)}</h1>")
+            i += 1
+        elif line.startswith("### "):
+            parts.append(f"<h3>{inline(line[4:].strip(), fnmap)}</h3>")
             i += 1
         elif line.startswith("## "):
             parts.append(f"<h2>{inline(line[3:].strip(), fnmap)}</h2>")
