@@ -136,7 +136,7 @@ def main():
         nums = [int(c) for c in args.chapters]
     rows = glossary_rows()
     known = load_known()
-    total_hidden = 0
+    total_hidden = scoped_open = scoped_hidden = 0
     for num in nums:
         found, context = check_chapter(num, rows, args.scoped)
         shown = [m for m in found if (m[0], num) not in known]
@@ -148,13 +148,17 @@ def main():
         if args.show_known:
             for zh, forms, count, where in hidden:
                 print(f"  [คัดแยกแล้ว: {known[(zh, num)]}] {zh} ({count} ครั้ง{'; ' + where if where else ''}) → {' / '.join(forms)}")
+        scoped_hidden += sum((zh, num) in known for zh, *_ in context)
+        scoped_open += sum((zh, num) not in known for zh, *_ in context)
         for zh, forms, count, _ in context:
             if (zh, num) in known and not args.show_known:
                 continue
             tag = f"[บริบท; คัดแยกแล้ว: {known[(zh, num)]}]" if (zh, num) in known else "[บริบท]"
             print(f"  {tag} {zh} ({count} ครั้ง) → รูปของแถวกำกับบริบท: {' / '.join(forms)}")
     if len(nums) > 1:
-        print(f"== รวมคัดแยกแล้ว {total_hidden} รายการ (ดู --show-known)")
+        print(f"== รายการปกติ: รวมคัดแยกแล้ว {total_hidden} รายการ (ดู --show-known)")
+        if args.scoped:
+            print(f"== รายการบริบท (--scoped): ยังไม่คัด {scoped_open}, คัดแยกแล้ว {scoped_hidden}")
 
 
 if __name__ == "__main__":
