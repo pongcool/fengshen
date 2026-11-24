@@ -149,7 +149,10 @@ def main():
             for zh, forms, count, where in hidden:
                 print(f"  [คัดแยกแล้ว: {known[(zh, num)]}] {zh} ({count} ครั้ง{'; ' + where if where else ''}) → {' / '.join(forms)}")
         for zh, forms, count, _ in context:
-            print(f"  [บริบท] {zh} ({count} ครั้ง) → รูปของแถวกำกับบริบท: {' / '.join(forms)}")
+            if (zh, num) in known and not args.show_known:
+                continue
+            tag = f"[บริบท; คัดแยกแล้ว: {known[(zh, num)]}]" if (zh, num) in known else "[บริบท]"
+            print(f"  {tag} {zh} ({count} ครั้ง) → รูปของแถวกำกับบริบท: {' / '.join(forms)}")
     if len(nums) > 1:
         print(f"== รวมคัดแยกแล้ว {total_hidden} รายการ (ดู --show-known)")
 
