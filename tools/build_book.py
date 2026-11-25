@@ -19,7 +19,7 @@ from term_stats import ROOT
 
 TITLE = "เฟิงเสินเหยี่ยนอี้"
 SUBTITLE = "封神演義 ฉบับแปลภาษาไทย"
-CREATOR = "แปลโดย Claude (Anthropic) ตรวจโดย Codex (OpenAI)"
+CREATOR = "แปลโดย Claude (Anthropic) ตรวจโดย Codex (OpenAI) ดูแลโครงการโดย Pong Cool"
 RIGHTS = "คำแปลอนุญาตภายใต้ CC BY-NC 4.0 (ห้ามใช้เพื่อการค้า) ต้นฉบับจีนเป็นสาธารณสมบัติ"
 BOOK_ID = "urn:uuid:" + str(uuid.uuid5(uuid.NAMESPACE_URL, "hongsin-fengshen-yanyi-th"))
 ITEM_TYPES = {"ของวิเศษ", "ค่ายกล", "วิชา", "อาวุธ", "พาหนะ"}
